@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
   grunt.initConfig({
-    
+
     clean: ['dist'],
 
     ejs: {
@@ -41,6 +41,8 @@ module.exports = function(grunt) {
 
     connect: {
       options: {
+        host: "0.0.0.0",
+        hostname: "0.0.0.0",
         port: process.env.PORT || 3131,
         base: 'dist/',
       },
@@ -83,9 +85,9 @@ module.exports = function(grunt) {
   });
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-  
+
   grunt.registerTask('default', ['clean', 'ejs', 'less', 'browserify', 'copy']);
-  
+
   grunt.registerTask('server', ['default', 'connect', 'watch']);
 
   grunt.registerTask('deploy', ['default', 'gh-pages']);
