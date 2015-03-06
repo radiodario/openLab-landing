@@ -1,0 +1,154 @@
+@bgColor: #212b39;
+@bgGradientStart: darken(@bgColor, 10%);
+@bgGradientStop: darken(@bgColor, 30%);
+
+@callToActionBG: orange;
+
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:500,700,400,300);
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
+
+
+.dark-background {
+  background: @bgGradientStop; /* Old browsers */
+  background: -moz-linear-gradient(top, @bgGradientStart 0%,  @bgGradientStop 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @bgGradientStart), color-stop(100%, @bgGradientStop)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, @bgGradientStart 0%, @bgGradientStop 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, @bgGradientStart 0%, @bgGradientStop 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, @bgGradientStart 0%, @bgGradientStop 100%); /* IE10+ */
+  background: linear-gradient(to bottom, @bgGradientStart 0%, @bgGradientStop 100%); /* W3C */
+}
+
+
+body {
+  margin: 0;
+
+  color: black;
+
+  font-family: Raleway, Helvetica, arial, sans-serif;
+
+  background: white;
+
+}
+
+.hero {
+  padding-top: 80px;
+  .dark-background;
+  color: white;
+  width: 100%;
+  height: 1280px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.cont {
+  margin: auto;
+  position: relative;
+  max-width: 800px;
+}
+
+.navbar {
+  height: 60px;
+  width: 100%;
+  background: @bgColor;
+  z-index: 20;
+
+}
+
+
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+
+.lead {
+  font-weight: 300;
+  font-size: 25pt;
+  text-align: center;
+}
+
+.invite-request {
+
+  position: absolute;
+  top: 860px;
+  width: 400px;
+  left: 50%;
+  margin-left: -200px;
+  text-align: center;
+
+
+  button {
+    font-family: Raleway;
+    display: inline-block;
+    position: relative;
+    line-height: 32px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20pt;
+    background-color: @callToActionBG;
+    color: white;
+    border: none;
+    -webkit-animation-name: callToActionPulse;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+  }
+
+}
+
+
+@-webkit-keyframes callToActionPulse {
+  from { background-color: darken(@callToActionBG, 10%); -webkit-box-shadow: 0 0 9px darken(@callToActionBG, 10%); }
+  50% { background-color: darken(@callToActionBG, 0%); -webkit-box-shadow: 0 0 18px darken(@callToActionBG, 0%); }
+  to { background-color: darken(@callToActionBG, 10%); -webkit-box-shadow: 0 0 9px darken(@callToActionBG, 10%); }
+}
+
+
+
+
+
+.bubbles-cont {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 1200px;
+}
+
+.logo-cont {
+  width: 80%;
+
+  margin: auto;
+
+  img {
+    width: 100%;
+  }
+}
+
+
+
+
+.columns {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row; /* works with row or column */
+   flex-direction: row;
+   // -webkit-align-items: center;
+   // align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+}
+
+.column {
+  width: 30%;
+  margin: 10px;
+
+
+}
+
+
+
+
